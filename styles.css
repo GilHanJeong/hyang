@@ -5,7 +5,7 @@
 /* 같은 나무패널을 메인과 분야 화면에서 재사용합니다. 이미지 속 투명 여백은 CSS 배경 크기로 조정합니다. */
 .home-menu,.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:min(100%,1080px);margin:12px auto 0}
 .home-menu a,.tab{display:flex;justify-content:center;align-items:center;min-width:0;min-height:80px;aspect-ratio:4/1;border:0;background-color:transparent;background-position:center;background-repeat:no-repeat;background-size:100% 175%;color:#fff4d4;font-size:23px;font-weight:900;text-shadow:2px 2px 0 #493021,-1px -1px 0 #493021,1px -1px 0 #493021,-1px 1px 0 #493021;cursor:pointer;image-rendering:pixelated;transition:filter .15s,transform .15s}
-.home-menu a[href="#education"],.tab[data-category=education]{background-image:url('./assets/tab-education.png')}.home-menu a[href="#games"],.tab[data-category=games]{background-image:url('./assets/tab-games.png')}.home-menu a[href="#hobbies"],.tab[data-category=hobbies]{background-image:url('./assets/tab-hobbies.png')}
+.home-menu a[href="#education"],.tab[data-category=education]{background-image:url('./assets/tab-education.png')}.home-menu a[href="#games"],.tab[data-category=games]{background-image:url('./assets/tab-games-v2.png')}.home-menu a[href="#hobbies"],.tab[data-category=hobbies]{background-image:url('./assets/tab-hobbies-v2.png')}
 .home-menu a:hover,.tab:hover{filter:brightness(1.12);transform:translateY(-2px)}.tab[aria-selected=false]{filter:saturate(.65) brightness(.88)}.tab[aria-selected=true]{filter:brightness(1.15);text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px}
 /* 분야 화면: 맵 위에 빈 사각형만 배치합니다. */
 main{position:relative;isolation:isolate;min-height:100svh;background:#fff}.school-background{display:none;position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}main[data-theme=education] .school-background{display:block}
@@ -50,7 +50,7 @@ main{overflow-x:clip}
 .tab-bar .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:8px;margin:0}
 .tab-bar .scene-home{position:static;transform:none;min-width:0}
 .home-menu a,.tab-bar .tab,.tab-bar .scene-home a{position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:auto;min-height:0;aspect-ratio:3/1;padding:0;border:0;background-color:transparent;background-size:contain;background-position:center;background-repeat:no-repeat;image-rendering:pixelated;color:#fff4d4;font-weight:900;font-size:clamp(16px,1.7vw,23px);text-shadow:2px 2px 0 #493021,-1px -1px 0 #493021,1px -1px 0 #493021,-1px 1px 0 #493021;pointer-events:auto}
-.tab-bar .scene-home a{background-image:url('./assets/tab-home.png')}
+.tab-bar .scene-home a{background-image:url('./assets/tab-home-v2.png')}
 .tab-bar .scene-home a:hover{filter:brightness(1.12)}
 .content-wrap{padding-top:180px}
 @media(max-width:800px){.tab-bar{width:calc(100% - 20px);gap:4px}.tab-bar .tabs{gap:4px}.content-wrap{padding-top:130px}}
