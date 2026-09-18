@@ -14,3 +14,18 @@ main{--accent:#456447;--accent-light:#e5ecd8;--line:#d9ddce;--paper:#fafbf5;back
 .home-menu a:last-child{border:0}.home-menu a:hover{background:#e8eedb}.home-menu a:nth-child(2):hover{background:#eee6f8;color:#68518a}.home-menu a:nth-child(3):hover{background:#f5e6d8;color:#a26743}.home-menu a>span:last-child{font-size:15px;font-weight:400}
 .scene-home{max-width:1232px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:15px 28px;border-bottom:1px solid var(--line);font-size:11px;color:#76806b}.scene-home a{font-weight:700;color:var(--accent)}
 @media(max-width:480px){.hero-content{padding-top:20px;padding-bottom:35px}.home-menu{width:calc(100% - 20px);margin-top:18px}.home-menu a{gap:10px;padding:18px 8px;font-size:16px}.scene-home{padding:13px 18px}}
+
+/* 첫 화면은 타이틀 자체에 시선이 모이도록 단순하게 구성합니다. */
+.hero-content{max-width:1360px;flex:initial;justify-content:flex-start;padding:clamp(22px,5svh,58px) 24px 55px}
+.hero-content h1{margin:0}
+h1 img{width:min(100%,1240px)}
+.tab{justify-content:center}
+.home-menu a{gap:0}
+@media(max-width:800px){.hero-content{padding:clamp(28px,8svh,68px) 10px 40px}.intro{margin-top:24px}.home-menu{margin-top:20px}}
+
+/* 배경은 흰색으로 통일하고 선택 상태에만 분야 색상을 사용합니다. */
+:root,body,.hero,main,main[data-theme=games],main[data-theme=hobbies],.tab-bar,footer{background:#fff}
+.hero-floor{display:none}
+.card,.card-art,.placeholder .card-art,.home-menu{background:#fff}
+.card-art:before{display:none}
+.home-menu{box-shadow:none}

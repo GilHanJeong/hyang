@@ -36,7 +36,7 @@ function showScene({ focus = true } = {}) {
   collections.hidden = !isCategory;
   footer.hidden = !isCategory;
   if (isCategory) selectCategory(key);
-  document.title = isCategory ? `${document.querySelector(`#tab-${key} > span:nth-child(2)`).textContent} | 한길쌤’s 창작마당` : '한길쌤’s 창작마당';
+  document.title = isCategory ? `${document.querySelector(`#tab-${key} > span`).textContent} | 한길쌤’s 창작마당` : '한길쌤’s 창작마당';
   window.scrollTo({ top: 0, behavior: 'instant' });
   if (focus) {
     const target = isCategory ? document.querySelector(`#tab-${key}`) : document.querySelector('.home-menu a');

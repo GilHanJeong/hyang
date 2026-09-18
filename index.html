@@ -13,15 +13,13 @@
 <body>
   <a class="skip-link" href="#education">교육 콘텐츠로 이동</a>
   <header class="hero" id="home">
-    <div class="topline"><a href="#home" class="brand">HANGIL’S CREATIVE YARD</a><span>배우고 · 만들고 · 즐기고</span></div>
     <div class="hero-content">
-      <p class="eyebrow"><span aria-hidden="true">✦</span> 작은 아이디어가 자라는 곳</p>
       <h1><img src="./assets/title-wood-panel.png" width="1997" height="787" alt="한길쌤’s 창작마당" fetchpriority="high"></h1>
       <p class="intro">수업을 위한 도구부터, 즐거운 게임과 소소한 취미까지.<br>직접 만들고 가꾼 것들을 이 마당에 모아둡니다.</p>
       <nav class="home-menu" aria-label="마당 선택">
-        <a href="#education"><span class="tab-number" aria-hidden="true">01</span>교육<span aria-hidden="true">↗</span></a>
-        <a href="#games"><span class="tab-number" aria-hidden="true">02</span>게임<span aria-hidden="true">↗</span></a>
-        <a href="#hobbies"><span class="tab-number" aria-hidden="true">03</span>취미<span aria-hidden="true">↗</span></a>
+        <a href="#education">교육</a>
+        <a href="#games">게임</a>
+        <a href="#hobbies">취미</a>
       </nav>
       <noscript><p>분야별 화면을 보려면 브라우저의 자바스크립트를 켜주세요.</p></noscript>
     </div>
@@ -29,9 +27,9 @@
   </header>
   <main id="collections" data-theme="education" hidden>
     <div class="tab-bar"><div class="scene-home"><a href="#home">← 메인으로</a><span>한길쌤’s 창작마당</span></div><div class="tabs" role="tablist" aria-label="창작마당 분야">
-      <button id="tab-education" class="tab" type="button" role="tab" aria-selected="true" aria-controls="panel-education" data-category="education"><span class="tab-number" aria-hidden="true">01</span><span>교육</span><span class="tab-caption">배움의 도구</span><span class="tab-arrow" aria-hidden="true">↗</span></button>
-      <button id="tab-games" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-games" tabindex="-1" data-category="games"><span class="tab-number" aria-hidden="true">02</span><span>게임</span><span class="tab-caption">즐거운 도전</span><span class="tab-arrow" aria-hidden="true">↗</span></button>
-      <button id="tab-hobbies" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-hobbies" tabindex="-1" data-category="hobbies"><span class="tab-number" aria-hidden="true">03</span><span>취미</span><span class="tab-caption">좋아하는 것들</span><span class="tab-arrow" aria-hidden="true">↗</span></button>
+      <button id="tab-education" class="tab" type="button" role="tab" aria-selected="true" aria-controls="panel-education" data-category="education"><span>교육</span></button>
+      <button id="tab-games" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-games" tabindex="-1" data-category="games"><span>게임</span></button>
+      <button id="tab-hobbies" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-hobbies" tabindex="-1" data-category="hobbies"><span>취미</span></button>
     </div></div>
     <div class="content-wrap">
       <section id="panel-education" class="panel" role="tabpanel" aria-labelledby="tab-education" tabindex="0"></section>
