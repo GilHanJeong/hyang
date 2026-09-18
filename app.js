@@ -12,23 +12,17 @@ for (const key of Object.keys(categories)) {
   for (let index = 0; index < 6; index++) {
     const slot = document.createElement('div');
     slot.className = 'scene-slot';
-    slot.setAttribute('aria-hidden', 'true');
+    const image = document.createElement('img');
+    image.src = './assets/under-construction.png';
+    image.alt = '공사 중 — 콘텐츠 준비 중';
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.width = 1448;
+    image.height = 1086;
+    slot.append(image);
     grid.append(slot);
   }
-  const paths = document.createElement('div');
-  paths.className = 'walkways';
-  paths.setAttribute('aria-hidden', 'true');
-  for (let i = 1; i <= 2; i++) {
-    const path = document.createElement('div');
-    path.className = `walkway vertical v${i}`;
-    paths.append(path);
-  }
-  for (let i = 1; i <= 5; i++) {
-    const path = document.createElement('div');
-    path.className = `walkway horizontal h${i}`;
-    paths.append(path);
-  }
-  panel.append(paths, grid);
+  panel.append(grid);
 }
 function selectCategory(key) {
   if (!Object.hasOwn(categories, key)) return;

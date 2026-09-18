@@ -39,3 +39,8 @@ main[data-theme=education] .walkways{display:block}
 @media(max-width:800px){.content-wrap{--plot-height:220px;--lane:42px;padding:65px 0 100px;width:76%}.scene-slots{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--lane)}.v1{left:calc((100% - var(--lane))/2)}.v2{display:none}.h2{display:block;top:calc(2 * var(--plot-height) + var(--lane))}.vertical{top:-65px;bottom:-100px}}
 @media(max-width:480px){.content-wrap{--plot-height:200px;--lane:44px;width:72%;padding:50px 0 80px}.scene-slots{grid-template-columns:1fr;gap:var(--lane)}.vertical{display:none}.h3{display:block;top:calc(3 * var(--plot-height) + 2 * var(--lane))}.h4{display:block;top:calc(4 * var(--plot-height) + 3 * var(--lane))}.h5{display:block;top:calc(5 * var(--plot-height) + 4 * var(--lane))}}
 main{overflow-x:clip}
+
+/* 빈 구역은 투명 공사 현장 스프라이트로 표시합니다. 보행로와 창 테두리는 없습니다. */
+.scene-slot,main:not([data-theme=education]) .scene-slot{display:grid;place-items:center;border:0;background:transparent;box-shadow:none}
+.scene-slot:before,.scene-slot:after{content:none}
+.scene-slot img{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
