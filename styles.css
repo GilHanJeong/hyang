@@ -58,4 +58,8 @@ main{overflow-x:clip}
 
 /* 공사 이미지는 보류하고 빈 배치 영역만 유지합니다. */
 main[data-theme=games]{background:#739444;min-height:max(100svh,165vw)}
-main[data-theme=games] .school-background{display:block;background:url('./assets/fantasy-village.png') center top / 100% auto repeat-y;image-rendering:pixelated}
+main[data-theme=games] .school-background{display:block;background:url('./assets/fantasy-village-v3.png') center top / 100% auto repeat-y;image-rendering:pixelated}
+
+/* 취미: 화덕과 선술집이 있는 공방 마을. 정방향 반복. */
+main[data-theme=hobbies]{background:#898671;min-height:max(100svh,165vw)}
+main[data-theme=hobbies] .school-background{display:block;background:url('./assets/artisan-village-v3.png') center top / 100% auto repeat-y;image-rendering:pixelated}
