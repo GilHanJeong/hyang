@@ -13,7 +13,7 @@ for (const key of Object.keys(categories)) {
     const slot = document.createElement('div');
     slot.className = 'scene-slot';
     const image = document.createElement('img');
-    image.src = './assets/under-construction.png';
+    image.src = './assets/under-construction-v2.png';
     image.alt = '공사 중 — 콘텐츠 준비 중';
     image.loading = 'lazy';
     image.decoding = 'async';
