@@ -12,14 +12,7 @@ for (const key of Object.keys(categories)) {
   for (let index = 0; index < 6; index++) {
     const slot = document.createElement('div');
     slot.className = 'scene-slot';
-    const image = document.createElement('img');
-    image.src = './assets/under-construction-v2.png';
-    image.alt = '공사 중 — 콘텐츠 준비 중';
-    image.loading = 'lazy';
-    image.decoding = 'async';
-    image.width = 1448;
-    image.height = 1086;
-    slot.append(image);
+    slot.setAttribute('aria-hidden', 'true');
     grid.append(slot);
   }
   panel.append(grid);
