@@ -8,7 +8,7 @@
 .home-menu a[href="#education"],.tab[data-category=education]{background-image:url('./assets/tab-education.png')}.home-menu a[href="#games"],.tab[data-category=games]{background-image:url('./assets/tab-games.png')}.home-menu a[href="#hobbies"],.tab[data-category=hobbies]{background-image:url('./assets/tab-hobbies.png')}
 .home-menu a:hover,.tab:hover{filter:brightness(1.12);transform:translateY(-2px)}.tab[aria-selected=false]{filter:saturate(.65) brightness(.88)}.tab[aria-selected=true]{filter:brightness(1.15);text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px}
 /* 분야 화면: 맵 위에 빈 사각형만 배치합니다. */
-main{position:relative;isolation:isolate;min-height:100svh;background:#fff}.school-background{display:none;position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}main[data-theme=education] .school-background{display:block}.school-tile{width:100%;aspect-ratio:1;background:url('./assets/school-campus.png') center/100% 100% no-repeat;image-rendering:pixelated}.school-tile:nth-child(even){transform:scaleY(-1)}
+main{position:relative;isolation:isolate;min-height:100svh;background:#fff}.school-background{display:none;position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none}main[data-theme=education] .school-background{display:block}
 .tab-bar{position:sticky;top:0;z-index:10;padding:14px 30px 18px;background:#ffffffed;border-bottom:2px solid #a6a99755;backdrop-filter:blur(8px)}.tabs{margin:0 auto;width:min(calc(100% - 80px),1080px)}.scene-home{position:absolute;left:22px;top:50%;transform:translateY(-50%)}.scene-home a{display:grid;place-items:center;width:42px;height:42px;font-size:30px;color:#715235;border:2px solid #b5a58d;background:#fff9e8}
 .content-wrap{position:relative;width:min(64%,1080px);margin:auto;padding:110px 0 220px;min-height:max(1500px,130vw)}.scene-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px;row-gap:clamp(150px,22vw,360px)}.scene-slot{aspect-ratio:1.25;min-height:190px;border:3px solid #60786b;background:#fffefaab;box-shadow:4px 4px 0 #354c4033,inset 0 0 0 3px #ffffff88}main:not([data-theme=education]) .scene-slot{background:#fff;border-color:#d0d0d0;box-shadow:none}
 @media(max-width:800px){.hero-content{padding:clamp(28px,8svh,68px) 10px 40px}.intro{font-size:13px;margin-top:24px}.home-menu{margin-top:20px;gap:5px}.home-menu a,.tab{font-size:19px;min-height:64px;background-size:100% 145%}.tab-bar{padding:12px 10px 14px 52px}.tabs{width:100%;gap:5px}.scene-home{left:8px}.scene-home a{width:34px;height:34px;font-size:25px}.scene-slots{grid-template-columns:repeat(2,minmax(0,1fr));gap:140px 18px}.scene-slot{min-height:170px}.content-wrap{padding:80px 0 180px;min-height:1600px}}
@@ -18,3 +18,24 @@ main{position:relative;isolation:isolate;min-height:100svh;background:#fff}.scho
 .home-menu a,.tab{width:100%;aspect-ratio:auto;height:clamp(64px,7vw,96px)}
 .scene-slot{width:100%;min-width:0;aspect-ratio:auto;height:clamp(190px,18vw,300px)}
 @media(max-width:480px){.home-menu a,.tab{height:60px}.scene-slot{height:190px}}
+
+/* 정방향 반복 정원 맵. 반전·회전 없이 같은 그림을 이어 붙입니다. */
+main[data-theme=education]{background:#81a443}
+main[data-theme=education] .school-background{background:url('./assets/school-garden.png') center top / 100% auto repeat-y;image-rendering:pixelated}
+.content-wrap{--plot-height:260px;--lane:64px;width:76%;max-width:1400px;padding:85px 0 160px;min-height:calc(100svh - 120px)}
+.panel{position:relative;isolation:isolate}
+.scene-slots{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--lane)}
+.scene-slot,main:not([data-theme=education]) .scene-slot{position:relative;height:var(--plot-height);min-height:0;background:transparent;border:2px dashed #f4e9b8;box-shadow:none}
+.scene-slot:before,.scene-slot:after{content:"";position:absolute;top:-5px;bottom:-5px;width:7px;border-top:12px solid #997348;border-bottom:12px solid #997348;filter:drop-shadow(2px 2px 0 #4c603c66)}
+.scene-slot:before{left:-5px}.scene-slot:after{right:-5px}
+main:not([data-theme=education]) .scene-slot{border-color:#ad9b7b}
+.walkways{display:none;position:absolute;inset:0;z-index:-1;pointer-events:none}
+main[data-theme=education] .walkways{display:block}
+.walkway{position:absolute;background-color:#d7d1bc;background-image:linear-gradient(#a59e894d 2px,transparent 2px),linear-gradient(90deg,#a59e894d 2px,transparent 2px);background-size:24px 16px;border:3px solid #bab499;box-shadow:0 2px 0 #71844866}
+.vertical{top:-85px;bottom:-160px;width:var(--lane)}
+.v1{left:calc((100% - 2 * var(--lane))/3)}.v2{left:calc((100% - 2 * var(--lane))/3 * 2 + var(--lane))}
+.horizontal{left:calc((100% - 100vw)/2);width:100vw;height:var(--lane);display:none}
+.h1{display:block;top:var(--plot-height)}
+@media(max-width:800px){.content-wrap{--plot-height:220px;--lane:42px;padding:65px 0 100px;width:76%}.scene-slots{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--lane)}.v1{left:calc((100% - var(--lane))/2)}.v2{display:none}.h2{display:block;top:calc(2 * var(--plot-height) + var(--lane))}.vertical{top:-65px;bottom:-100px}}
+@media(max-width:480px){.content-wrap{--plot-height:200px;--lane:44px;width:72%;padding:50px 0 80px}.scene-slots{grid-template-columns:1fr;gap:var(--lane)}.vertical{display:none}.h3{display:block;top:calc(3 * var(--plot-height) + 2 * var(--lane))}.h4{display:block;top:calc(4 * var(--plot-height) + 3 * var(--lane))}.h5{display:block;top:calc(5 * var(--plot-height) + 4 * var(--lane))}}
+main{overflow-x:clip}

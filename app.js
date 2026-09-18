@@ -15,23 +15,21 @@ for (const key of Object.keys(categories)) {
     slot.setAttribute('aria-hidden', 'true');
     grid.append(slot);
   }
-  panel.append(grid);
+  const paths = document.createElement('div');
+  paths.className = 'walkways';
+  paths.setAttribute('aria-hidden', 'true');
+  for (let i = 1; i <= 2; i++) {
+    const path = document.createElement('div');
+    path.className = `walkway vertical v${i}`;
+    paths.append(path);
+  }
+  for (let i = 1; i <= 5; i++) {
+    const path = document.createElement('div');
+    path.className = `walkway horizontal h${i}`;
+    paths.append(path);
+  }
+  panel.append(paths, grid);
 }
-// 인접 배경을 세로 반전해 같은 픽셀 경계가 만나도록 연결합니다.
-// 화면 크기와 콘텐츠 길이에 맞춰 필요한 만큼만 배경 타일을 생성합니다.
-const scenery = document.querySelector('.school-background');
-function fillScenery() {
-  if (collections.hidden || collections.dataset.theme !== 'education') return;
-  const count = Math.ceil(collections.offsetHeight / collections.clientWidth) + 1;
-  if (scenery.children.length === count) return;
-  scenery.replaceChildren(...Array.from({ length: count }, () => {
-    const tile = document.createElement('div');
-    tile.className = 'school-tile';
-    return tile;
-  }));
-}
-new ResizeObserver(fillScenery).observe(collections);
-
 function selectCategory(key) {
   if (!Object.hasOwn(categories, key)) return;
   collections.dataset.theme = key;
@@ -49,7 +47,6 @@ function showScene({ focus = true } = {}) {
   home.hidden = isCategory;
   collections.hidden = !isCategory;
   if (isCategory) selectCategory(key);
-  fillScenery();
   document.title = isCategory ? `${document.querySelector(`#tab-${key} > span`).textContent} | 한길쌤’s 창작마당` : '한길쌤’s 창작마당';
   window.scrollTo({ top: 0, behavior: 'instant' });
   if (focus) {
