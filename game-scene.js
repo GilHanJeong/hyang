@@ -16,7 +16,7 @@
     const tile = document.createElement('div');
     tile.className = 'game-tile';
     const img = document.createElement('img');
-    img.src = `./assets/game-village-${i % 3 + 1}.png`;
+    img.src = `./assets/game-village-small-${i % 3 + 1}.png`;
     img.alt = ''; img.draggable = false;
     tile.append(img);
     strip.append(tile);
@@ -38,8 +38,9 @@
     if (panel.hidden) return;
     const oldWidth = width;
     const fraction = oldWidth ? (scroller.scrollLeft / oldWidth) % 3 : 0;
-    width = view.clientHeight * 3;
+    width = scroller.clientHeight * 3;
     view.style.setProperty('--tile-width', `${width}px`);
+    view.style.setProperty("--scene-height", scroller.clientHeight + "px");
     scroller.scrollLeft = width * (3 + fraction);
     update();
   };
