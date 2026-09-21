@@ -63,3 +63,19 @@ main[data-theme=games] .school-background{display:block;background:url('./assets
 /* 취미: 화덕과 선술집이 있는 공방 마을. 정방향 반복. */
 main[data-theme=hobbies]{background:#898671;min-height:max(100svh,165vw)}
 main[data-theme=hobbies] .school-background{display:block;background:url('./assets/artisan-village-v3.png') center top / 100% auto repeat-y;image-rendering:pixelated}
+
+/* Only the game scene uses the horizontal layered village. */
+main[data-theme=games]{height:100svh;min-height:100svh;overflow:hidden;background:#79bdf0}
+main[data-theme=games] .school-background{display:none}
+main[data-theme=games] .content-wrap{width:100%;max-width:none;height:100%;min-height:0;padding:0;margin:0}
+main[data-theme=games] #panel-games{height:100%;outline-offset:-4px}
+.game-view{position:relative;height:100%;overflow:hidden;--tile-width:300svh}
+.game-distant{position:absolute;inset:0;background:url('./assets/game-distant.png') left top / var(--tile-width) 100% repeat-x;image-rendering:pixelated;pointer-events:none}
+.game-scroll{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#80552b #c7dfed;outline-offset:-4px}
+.game-strip{display:flex;width:max-content;height:100%}
+.game-tile{position:relative;flex:0 0 var(--tile-width);width:var(--tile-width);height:100%}
+.game-tile img{display:block;width:100%;height:100%;image-rendering:pixelated;user-select:none}
+.game-ground{position:absolute;left:0;right:0;bottom:0;height:9%;pointer-events:none;background:url('./assets/game-village-1.png') left bottom / var(--tile-width) 100svh repeat-x;image-rendering:pixelated}
+.game-controls{position:absolute;bottom:9%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;white-space:nowrap;padding:6px 10px;color:#fff9e3;background:#382715c9;border:1px solid #dec39b;border-radius:8px;font-size:12px}
+.game-controls button{width:38px;height:36px;border:1px solid #c99e63;border-radius:5px;background:#79532c;color:#fff9e3;cursor:pointer;font-size:22px}
+@media(max-width:480px){.game-controls{bottom:8%;font-size:11px;gap:8px}}
